@@ -27,7 +27,7 @@ public class TemaController {
     private TemaRepository repository;
 
 
-	@GetMapping("/tema")
+	@GetMapping("/temas")
 	public ResponseEntity<List<Tema>> findAllTema(){
 	       return ResponseEntity.ok(repository.findAll());
 	}
@@ -39,8 +39,8 @@ public class TemaController {
 	}
 	
 	@GetMapping("/descricao/{descricao}")
-	public ResponseEntity<List<Tema>> findByDescricaoPostagem (@PathVariable String descricao ){
-	        return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
+	public ResponseEntity<Tema> findByDescricaoPostagem (@PathVariable String descricao ){
+	        return ResponseEntity.ok(repository.findOneByDescricaoContainingIgnoreCase(descricao));
 	 
 	}
 	
