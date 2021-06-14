@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 public class Usuario {
 	
 	public Usuario() {}
-	public Usuario(Long id, String nome, String usuario, String senha) {
+	public Usuario(long id, String nome, String usuario, String senha) {
 	this.id = id;
 	this.nome = nome;
 	this.usuario = usuario;

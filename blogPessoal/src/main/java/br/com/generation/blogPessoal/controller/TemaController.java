@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.generation.blogPessoal.model.Postagem;
+ 
 import br.com.generation.blogPessoal.model.Tema;
 import br.com.generation.blogPessoal.repository.TemaRepository;
 
@@ -33,7 +33,7 @@ public class TemaController {
 	}
 	
 	
-	@GetMapping("/{id}") 
+	@GetMapping("/id/{id}") 
 	public ResponseEntity<Tema> findByIDTema(@PathVariable long id){
 	      return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
@@ -56,7 +56,7 @@ public class TemaController {
 	}
  
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/deletar/{id}")
 	public void deleteTema(@PathVariable long id){
 	       repository.deleteById(id);
 

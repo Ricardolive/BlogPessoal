@@ -24,16 +24,16 @@ public class UsuarioRepositoryTest {
 	private UsuarioRepository usuarioRepository;
 	@BeforeAll
 	public void start() {
-	Usuario usuario = new Usuario(null, "Ricardo", "admin", "admin123");
+	Usuario usuario = new Usuario(0L, "Ricardo", "admin", "admin123");
 	if (usuarioRepository.findByUsuario(usuario.getUsuario()) == null)
 		usuarioRepository.save(usuario);
-	usuario = new Usuario(null, "Ademiro", "ademir", "123456");
+	usuario = new Usuario(0L, "Ademiro", "ademir", "123456");
 	if (usuarioRepository.findByUsuario(usuario.getUsuario()) == null)
 		usuarioRepository.save(usuario);
-	usuario = new Usuario(null, "Rafael", "rafa", "789456");
+	usuario = new Usuario(0L, "Rafael", "rafa", "789456");
 	if (usuarioRepository.findByUsuario(usuario.getUsuario()) == null)
 		usuarioRepository.save(usuario);
-	usuario = new Usuario(null, "Amigo", "amigo", "123123");
+	usuario = new Usuario(0L, "Amigo", "amigo", "123123");
 	if (usuarioRepository.findByUsuario(usuario.getUsuario()) == null)
 		usuarioRepository.save(usuario);
 	}

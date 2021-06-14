@@ -33,7 +33,7 @@ public class PostagemController {
 		return ResponseEntity.ok(repository.findAll());	
 	}
 	
-	@GetMapping("/{id}") 
+	@GetMapping("/id/{id}") 
 	public ResponseEntity<Postagem> findByIDPostagem(@PathVariable long id){
 	      return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
@@ -56,7 +56,7 @@ public class PostagemController {
 	}
  
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/deletar/{id}")
 	public void deletePostagem(@PathVariable long id){
 	       repository.deleteById(id);
 

@@ -2,6 +2,7 @@ package br.com.generation.blogPessoal.model;
 
 import javax.validation.Validation;
 import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,12 +23,13 @@ public class UsuarioTest {
 	public Usuario usuario;
 	
 	@Autowired
-	private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+	private  ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+	Validator validator = factory.getValidator();
 	
 	@BeforeEach
 	public void start() {
 		
-		usuario = new Usuario(null,"Ricardo","admin","admin123");	
+		usuario = new Usuario(0L,"Ricardo","admin","admin123");	
 	}
 	
 	
@@ -42,11 +44,6 @@ public class UsuarioTest {
 
 	}
 	
-	
-	
-	
-	
-	
-	
+ 
 
 }

@@ -30,7 +30,7 @@ public class UsuarioControllerTest {
 	
 	@BeforeAll
 	public void start() {
-	usuario = new Usuario(null, "Maria", "maria", "123123");
+	usuario = new Usuario( 0L, "Maria", "maria", "123123");
 	usuarioupd = new Usuario(2L,"Maria da Silva", "maria23", "123456");
 	}
 	
@@ -38,7 +38,7 @@ public class UsuarioControllerTest {
 	@Test
 	public void deveRealizarPostUsuarios() {
 	HttpEntity<Usuario> request = new HttpEntity<Usuario>(usuario);
-	ResponseEntity<Usuario> resposta = testRestTemplate.exchange("/usuarios/inserir", HttpMethod.POST, request, Usuario.class);
+	ResponseEntity<Usuario> resposta = testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, Usuario.class);
 	assertEquals(HttpStatus.CREATED, resposta.getStatusCode());
 	}
 	

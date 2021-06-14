@@ -10,8 +10,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-
+ 
 @EnableWebSecurity
 public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 	
@@ -25,7 +24,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
         
          auth.inMemoryAuthentication()
         .withUser("root")
-        .password(passwordEncoder().encode("Admin357/"))
+        .password(passwordEncoder().encode("root"))
         .authorities("ROLE_USER");
      
 
