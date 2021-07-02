@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
  
@@ -19,7 +20,8 @@ import br.com.generation.blogPessoal.model.Tema;
 import br.com.generation.blogPessoal.repository.TemaRepository;
 
 @RestController
-@CrossOrigin(origins = "*",allowedHeaders="*")
+@RequestMapping("/temas")
+@CrossOrigin(origins ="*",allowedHeaders="*")
 public class TemaController {
 	
 	
@@ -27,7 +29,7 @@ public class TemaController {
     private TemaRepository repository;
 
 
-	@GetMapping("/temas")
+	@GetMapping
 	public ResponseEntity<List<Tema>> findAllTema(){
 	       return ResponseEntity.ok(repository.findAll());
 	}
