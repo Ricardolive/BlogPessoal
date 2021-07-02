@@ -27,7 +27,7 @@ public class PostagemController {
 	private PostagemRepository repository;
 	
 	
-	@GetMapping
+	@GetMapping("/listar")
 	public ResponseEntity<List<Postagem>> findAllPostagem(){
 		
 		return ResponseEntity.ok(repository.findAll());	
@@ -45,12 +45,12 @@ public class PostagemController {
 	}
 	
 	
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Postagem> postPostagem(@RequestBody Postagem postagem){
 	        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
 	}
 	
-	@PutMapping
+	@PutMapping("/atualizar")
 	public ResponseEntity<Postagem> putPostagem(@RequestBody Postagem postagem){
 	        return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}

@@ -29,7 +29,7 @@ public class TemaController {
     private TemaRepository repository;
 
 
-	@GetMapping
+	@GetMapping("/listar")
 	public ResponseEntity<List<Tema>> findAllTema(){
 	       return ResponseEntity.ok(repository.findAll());
 	}
@@ -47,12 +47,12 @@ public class TemaController {
 	}
 	
 	
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Tema> postTema(@RequestBody Tema tema){
 	        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
-	@PutMapping
+	@PutMapping("/atualizar")
 	public ResponseEntity<Tema> putTema(@RequestBody Tema tema){
 	        return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
 	}
