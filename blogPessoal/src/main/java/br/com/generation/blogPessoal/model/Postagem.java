@@ -35,7 +35,7 @@ private String titulo;
 private String texto;
 
 @Temporal(TemporalType.TIMESTAMP)
-private Date date = new java.sql.Date(System.currentTimeMillis());
+private Date dataPost = new java.sql.Date(System.currentTimeMillis());
 
 
 
@@ -71,13 +71,14 @@ public String getTexto() {
 public void setTexto(String texto) {
 	this.texto = texto;
 }
+ 
 
-public Date getDate() {
-	return date;
+public Date getDataPost() {
+	return dataPost;
 }
 
-public void setDate(Date date) {
-	this.date = date;
+public void setDataPost(Date dataPost) {
+	this.dataPost = dataPost;
 }
 
 public Tema getTema() {

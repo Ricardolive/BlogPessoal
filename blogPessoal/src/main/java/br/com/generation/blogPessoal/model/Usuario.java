@@ -20,16 +20,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Usuario {
 	
 	public Usuario() {}
-	public Usuario(long id, String nome, String usuario, String senha) {
-	this.id = id;
-	this.nome = nome;
-	this.usuario = usuario;
-	this.senha = senha;
+	
+
+	public Usuario(long id,String nome,String usuario, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
 	}
 
-	
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;

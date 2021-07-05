@@ -22,7 +22,7 @@ public class UsuarioService {
     public Usuario CadastrarUsuario(Usuario usuario){
        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-      String senhaEncoder = encoder.encode(usuario.getSenha() );
+      String senhaEncoder = encoder.encode(usuario.getSenha());
       usuario.setSenha(senhaEncoder);
           	return repository.save(usuario);
   }

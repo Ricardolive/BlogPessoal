@@ -17,7 +17,7 @@ import br.com.generation.blogPessoal.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "*", allowedHeaders= "*")
+@CrossOrigin("*")
 public class UsuarioController {
 	
 	
@@ -26,16 +26,16 @@ public class UsuarioController {
 
 
    @PostMapping("/logar")
-   public ResponseEntity<UserLogin> Autentication(@RequestBody  Optional<UserLogin> user ){
+   public ResponseEntity<UserLogin> Autentication(@RequestBody  Optional<UserLogin> user){
             return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
-                    .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build() );
+                    .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
    }
 
   
 	  @PostMapping("/cadastrar")
 	  public ResponseEntity<Usuario> Post(@RequestBody  Usuario usuario){
 		  return ResponseEntity.status(HttpStatus.CREATED)
-	       .body(service.CadastrarUsuario(usuario) );
+	       .body(service.CadastrarUsuario(usuario));
 	  }
 }
 
