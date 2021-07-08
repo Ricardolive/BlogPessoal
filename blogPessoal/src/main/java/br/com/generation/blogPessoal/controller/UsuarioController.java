@@ -24,12 +24,14 @@ import br.com.generation.blogPessoal.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 	
 	
 	@Autowired
     private UsuarioService  service;
+	
+	@Autowired
 	private UsuarioRepository repository;
 	
 	@GetMapping("/listar")
