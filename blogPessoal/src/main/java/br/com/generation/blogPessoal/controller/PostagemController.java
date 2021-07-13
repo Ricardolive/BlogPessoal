@@ -39,8 +39,8 @@ public class PostagemController {
 	}
 	
 	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<Postagem> findByDescricaoTitulo(@PathVariable String titulo ){
-	        return ResponseEntity.ok(repository.findOneByTituloContainingIgnoreCase(titulo));
+	public ResponseEntity<List<Postagem>> findByDescricaoTitulo(@PathVariable String titulo ){
+	        return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	 
 	}
 	
