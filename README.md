@@ -1,1 +1,1 @@
-# BlogPessoal
+Projeto BlogPessoal em angular
