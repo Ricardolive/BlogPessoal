@@ -1,1 +1,1 @@
-Projeto BlogPessoal em angular
+Projeto feito no Spring Boot 
